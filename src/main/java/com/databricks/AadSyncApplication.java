@@ -29,11 +29,11 @@ public class AadSyncApplication {
 
     private static final Logger log = LoggerFactory.getLogger(AadSyncApplication.class);
 
-    private static HashMap<String, Set<String>> userGroupmap= new HashMap<String, Set<String>>();
+    private static HashMap<String, Set<String>> userGroupmap = new HashMap<String, Set<String>>();
 
-    private static HashMap<String, Set<String>> groupUsermap= new HashMap<String, Set<String>>();
+    private static HashMap<String, Set<String>> groupUsermap = new HashMap<String, Set<String>>();
 
-    private static boolean dryRun=false;
+    private static boolean dryRun = false;
 
 //    @Bean
 //    public RestTemplate restTemplate(RestTemplateBuilder builder) {
@@ -46,11 +46,10 @@ public class AadSyncApplication {
 
         try {
 
-            for(String arg : args)
-            {
+            for (String arg : args) {
                 log.info("Program arguments are");
                 log.info(arg);
-                if(arg.equals("--dryRun"))
+                if (arg.equals("--dryRun"))
                     dryRun = true;
             }
             BuildConfidentialClientObject();
@@ -69,22 +68,18 @@ public class AadSyncApplication {
             //Iterate each group
             for (Group g : groupsListFromGraph.value) {
 
-                for(String arg : args)
-                {
-                  if(!arg.startsWith("--") && arg.equals(g.displayName))
-                      extractFromGroup(result, g.id ,g.displayName);
+                for (String arg : args) {
+                    if (!arg.startsWith("--") && arg.equals(g.displayName))
+                        extractFromGroup(result, g.id, g.displayName);
                 }
 
             }
 
             //Iterate through Users
-            for (String key:userGroupmap.keySet())
-            {
-                for(String value:userGroupmap.get(key))
-                {
-                    log.info("User :"+ key +" Group :"+value);
-                    if(!dryRun)
-                    {
+            for (String key : userGroupmap.keySet()) {
+                for (String value : userGroupmap.get(key)) {
+                    log.info("User :" + key + " Group :" + value);
+                    if (!dryRun) {
 
                     }
                 }
@@ -92,13 +87,10 @@ public class AadSyncApplication {
             }
 
             //Iterate through groups
-            for (String key:groupUsermap.keySet())
-            {
-                for(String value:groupUsermap.get(key))
-                {
-                    log.info("Group :"+ key +" User :"+value);
-                    if(!dryRun)
-                    {
+            for (String key : groupUsermap.keySet()) {
+                for (String value : groupUsermap.get(key)) {
+                    log.info("Group :" + key + " User :" + value);
+                    if (!dryRun) {
 
                     }
                 }
@@ -115,7 +107,7 @@ public class AadSyncApplication {
         }
     }
 
-    private static void extractFromGroup(IAuthenticationResult result, String gid,String displayName) throws IOException {
+    private static void extractFromGroup(IAuthenticationResult result, String gid, String displayName) throws IOException {
         //Get Membership per group
         GroupMembers groupMembers = getGroupsMembersFromGraph(result.accessToken(), gid);
 
@@ -124,34 +116,27 @@ public class AadSyncApplication {
             if (gm.odataType.equals("#microsoft.graph.user")) {
                 //log.info("User :" + gm.displayName + "----Group :" + displayName);
 
-                for(String gp:displayName.split(":"))
-                {
-                    Set<String> users= groupUsermap.get(gp);
-                    if(users!=null)
-                    {
+                for (String gp : displayName.split(":")) {
+                    Set<String> users = groupUsermap.get(gp);
+                    if (users != null) {
                         users.add(gm.displayName);
-                    }
-                    else
-                    {
-                        groupUsermap.put(gp,new HashSet<>(Arrays.asList(gm.displayName)));
+                    } else {
+                        groupUsermap.put(gp, new HashSet<>(Arrays.asList(gm.displayName)));
                     }
 
                 }
 
 
-                Set<String> groups= userGroupmap.get(gm.displayName);
-                if(groups !=null)
-                {
-                    for(String a:displayName.split(":"))
+                Set<String> groups = userGroupmap.get(gm.displayName);
+                if (groups != null) {
+                    for (String a : displayName.split(":"))
                         groups.add(a);
-                }
-                else
+                } else
                     userGroupmap.put(gm.displayName, (new HashSet<>(Arrays.asList(displayName.split(":")))));
 
 
-            }
-            else if (gm.odataType.equals("#microsoft.graph.group")) {
-                extractFromGroup(result, gm.id,displayName+":"+gm.displayName);
+            } else if (gm.odataType.equals("#microsoft.graph.group")) {
+                extractFromGroup(result, gm.id, displayName + ":" + gm.displayName);
 
             }
 
@@ -393,3 +378,4 @@ public class AadSyncApplication {
         }
 
     }
+}
