@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a527ec54-a35b-495c-917b-83be486d227e" name="Changes" comment="FirstPush" />
+    <list default="true" id="a527ec54-a35b-495c-917b-83be486d227e" name="Changes" comment="FirstPush">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/DBGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/DBGroupMember.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/DBUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/DBUserResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/DBUsersResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/Email.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/Name.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/databricks/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/databricks/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/databricks/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +34,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -35,16 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/abhishekpratap.singh/APSProjects/aadDBsync/src/main",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/abhishekpratap.singh/APSProjects/aadDBsync/src/main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.databricks" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
@@ -53,7 +70,7 @@
     <configuration name="RunJarInDebug-aadDBsync" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/aadDBsync-1.0-SNAPSHOT.jar" />
       <option name="VM_PARAMETERS" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000" />
-      <option name="PROGRAM_PARAMETERS" value="c1 --dryRun" />
+      <option name="PROGRAM_PARAMETERS" value="c1" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="aadDBsync" />
@@ -126,7 +143,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664689013708</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="FirstPush">
+      <created>1664689301590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664689301590</updated>
+    </task>
+    <task id="LOCAL-00003" summary="FirstPush">
+      <created>1664689400358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664689400358</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,13 +180,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="20" />
+          <line>212</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="22" />
+          <line>108</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/databricks/AadSyncApplication.java</url>
+          <line>479</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
